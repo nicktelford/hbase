@@ -176,7 +176,6 @@ public class TestTableInputFormatScan {
   public void testScanEmptyToEmpty()
   throws IOException, InterruptedException, ClassNotFoundException {
     testScan(null, null, null);
-    testScanFromConfiguration(null, null, null);
   }
 
   /**
@@ -190,7 +189,6 @@ public class TestTableInputFormatScan {
   public void testScanEmptyToAPP()
   throws IOException, InterruptedException, ClassNotFoundException {
     testScan(null, "app", "apo");
-    testScanFromConfiguration(null, "app", "apo");
   }
 
   /**
@@ -204,7 +202,6 @@ public class TestTableInputFormatScan {
   public void testScanEmptyToBBA()
   throws IOException, InterruptedException, ClassNotFoundException {
     testScan(null, "bba", "baz");
-    testScanFromConfiguration(null, "bba", "baz");
   }
 
   /**
@@ -218,7 +215,6 @@ public class TestTableInputFormatScan {
   public void testScanEmptyToBBB()
   throws IOException, InterruptedException, ClassNotFoundException {
     testScan(null, "bbb", "bba");
-    testScanFromConfiguration(null, "bbb", "bba");
   }
 
   /**
@@ -232,7 +228,6 @@ public class TestTableInputFormatScan {
   public void testScanEmptyToOPP()
   throws IOException, InterruptedException, ClassNotFoundException {
     testScan(null, "opp", "opo");
-    testScanFromConfiguration(null, "opp", "opo");
   }
 
   /**
@@ -246,7 +241,6 @@ public class TestTableInputFormatScan {
   public void testScanOBBToOPP()
   throws IOException, InterruptedException, ClassNotFoundException {
     testScan("obb", "opp", "opo");
-    testScanFromConfiguration("obb", "opp", "opo");
   }
 
   /**
@@ -260,7 +254,6 @@ public class TestTableInputFormatScan {
   public void testScanOBBToQPP()
   throws IOException, InterruptedException, ClassNotFoundException {
     testScan("obb", "qpp", "qpo");
-    testScanFromConfiguration("obb", "qpp", "qpo");
   }
 
   /**
@@ -274,7 +267,6 @@ public class TestTableInputFormatScan {
   public void testScanOPPToEmpty()
   throws IOException, InterruptedException, ClassNotFoundException {
     testScan("opp", null, "zzz");
-    testScanFromConfiguration("opp", null, "zzz");
   }
 
   /**
@@ -288,7 +280,6 @@ public class TestTableInputFormatScan {
   public void testScanYYXToEmpty()
   throws IOException, InterruptedException, ClassNotFoundException {
     testScan("yyx", null, "zzz");
-    testScanFromConfiguration("yyx", null, "zzz");
   }
 
   /**
@@ -302,7 +293,6 @@ public class TestTableInputFormatScan {
   public void testScanYYYToEmpty()
   throws IOException, InterruptedException, ClassNotFoundException {
     testScan("yyy", null, "zzz");
-    testScanFromConfiguration("yyy", null, "zzz");
   }
 
   /**
@@ -316,7 +306,12 @@ public class TestTableInputFormatScan {
   public void testScanYZYToEmpty()
   throws IOException, InterruptedException, ClassNotFoundException {
     testScan("yzy", null, "zzz");
-    testScanFromConfiguration("yzy", null, "zzz");
+  }
+
+  @Test
+  public void testScanFromConfiguration()
+  throws IOException, InterruptedException, ClassNotFoundException {
+    testScanFromConfiguration("bba", "bbd", "bbc");
   }
 
   /**
